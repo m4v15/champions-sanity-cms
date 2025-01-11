@@ -11,7 +11,7 @@ type HeroProps = {
 
 const Hero = (props: HeroProps) => (
     <div className="bg-hero bg-center bg-no-repeat bg-cover h-hero max-w-hero mx-auto" >
-        <header className="text-left mx-auto max-w-screen-lg px-3 pt-8">
+        <header className="text-left mx-auto max-w-screen-lg px-3 pt-8 w-100">
             <h1 className="whitespace-pre-line text-2xl font-bold leading-hero text-gray-100">
                 <span className="text-3xl text-gray-900">
                     {props.title}
