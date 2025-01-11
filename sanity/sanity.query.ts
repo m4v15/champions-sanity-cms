@@ -1,11 +1,13 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-export async function getAbout() {
+export async function getContent() {
   return client.fetch(
-    groq`*[_type == "about"]{
+    groq`*[_type == "siteContent" && contentName == "Main Page"]{
       _id,
-      aboutText
+      aboutText,
+      landingTitle,
+      landingSubtitle
     }`
   );
 }
