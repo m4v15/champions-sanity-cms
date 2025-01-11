@@ -11,19 +11,19 @@ const geistSans = Geist({
 
 const NavLinks = [
   {
-    root: '/about',
+    route: '/about',
     display: 'about'
   },
   {
-    root: '/volunteer',
+    route: '/volunteer',
     display: 'volunteer'
   },
   {
-    root: '/funds',
+    route: '/funds',
     display: 'funds'
   },
   {
-    root: '/links',
+    route: '/links',
     display: 'links'
   }
 ]
