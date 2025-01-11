@@ -8,10 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero': "url('/background-image.webp')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      height: {
+        'hero': '800px'
+      },
+      maxWidth: {
+        'hero':'1400px'
+      }
     },
   },
   plugins: [],
