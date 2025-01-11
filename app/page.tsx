@@ -1,72 +1,10 @@
-import type { ReactNode } from 'react';
 import Link from 'next/link';
-
-type SectionProps = {
-  title?: string;
-  description?: string;
-  children: ReactNode;
-};
-
-const Section = (props: SectionProps) => (
-  <div className='mx-auto max-w-screen-lg px-3'>
-    {(props.title || props.description) && (
-      <div className="mb-12 text-center">
-        {props.title && (
-          <h2 className="text-4xl font-bold text-gray-900">{props.title}</h2>
-        )}
-        {props.description && (
-          <div className="mt-4 text-xl md:px-20">{props.description}</div>
-        )}
-      </div>
-    )}
-
-    {props.children}
-  </div>
-);
-
-type ButtonProps = {
-  text: string;
-};
-
-const Button = (props: ButtonProps) => (
-  <div className="inline-block text-center text-white bg-black text-base font-semibold py2 px-4">
-    {props.text}
-  </div>
-);
-
-type HeroImageProps = {
-  title: ReactNode;
-  description: string;
-};
-
-const HeroImage = (props: HeroImageProps) => (
-  <div className="bg-hero bg-center bg-no-repeat bg-cover h-hero max-w-hero mx-auto" >
-    <header className="text-left mx-auto max-w-screen-lg px-3 pt-8">
-      <h1 className="whitespace-pre-line text-2xl font-bold leading-hero text-gray-100">
-        <span className="text-3xl text-gray-900">
-          {props.title}
-        </span>
-      </h1>
-      <div className="mb-16 mt-4 text-xl text-gray-100">{props.description}</div>
-
-      <Link href="/volunteer">
-        <Button text="Volunteer With Us" />
-      </Link>
-
-      <br /><br />
-      <Link href="/funds">
-        <Button text="See the funds we&apos;re supporting" />
-      </Link>
-
-    </header>
-  </div>
-);
-
+import { Section, Button, Hero } from '@/components';
 
 export default function Home() {
   return (
     <>
-      <HeroImage
+      <Hero
         title="Connect with and champion Gazan families trying to survive genocide"
         description="We are a collective of allies around the world who are connecting with families in Gaza as pen pals and champions for their fundraising campaigns to survive day-to-day life Gaza."
       />

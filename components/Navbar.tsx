@@ -67,4 +67,4 @@ const NavBar = (props: INavbarProps) => (
     </div>
 );
 
-export { NavBar };
+export default NavBar;
