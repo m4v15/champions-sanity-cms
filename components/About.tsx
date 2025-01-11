@@ -1,6 +1,6 @@
 import { Section, Button } from '@/components'
-import { getAbout } from '@/sanity/sanity.query';
-import { AboutType } from '@/types';
+import { getContent } from '@/sanity/sanity.query';
+import { SiteContentType } from '@/types';
 import Link from 'next/link';
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
@@ -14,17 +14,16 @@ const portableTextComponents: PortableTextComponents = {
 
 const About = async () => {
 
-    const content: AboutType[] = await getAbout()
+    const content: SiteContentType[] = await getContent()
 
     return (
         <Section>
             <div className="mt-5 flex flex-col items-center text-gray-950">
                 <div className="w-full text-left font-light">
-                    {content && (
-                        <PortableText value={content[0].aboutText}
-
+                    {content && content[0] && (
+                        <PortableText
+                            value={content[0].aboutText}
                             components={portableTextComponents}
-
                         />
                     )}
                 </div>
