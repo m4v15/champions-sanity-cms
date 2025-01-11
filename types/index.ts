@@ -6,3 +6,12 @@ export type SiteContentType = {
   landingTitle: string,
   landingSubtitle: string
 };
+
+type LinkType = "project" | "media";
+
+export type SanityLinksType = {
+  _id: string,
+  text: string,
+  url: string,
+  type: [LinkType]
+};
