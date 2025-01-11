@@ -31,10 +31,10 @@ const NavBar = (props: INavbarProps) => (
                 <Link href="/"> <Logo /> </Link>
             </div>
             <nav>
-                <ul className="navbar flex items-center text-xl font-medium">
+                <ul className="navbar flex items-center text-xl font-bold">
                     {props.links.map(link =>
                         <li key={link.root}>
-                            <Link href={link.root} className="text-gray-500 hover:text-gray-900 m-2">
+                            <Link href={link.root} className="text-gray-400 hover:text-gray-900 m-2">
                                 {link.display}
                             </Link>
                         </li>
