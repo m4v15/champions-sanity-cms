@@ -9,7 +9,7 @@ const content = {
       name: "contentName",
       title: "Content Name",
       type: "string",
-      description: "The name of this content",
+      description: "The name of this content - DO NOT CHANGE",
     }),  
     defineField({
         name: "landingTitle",
