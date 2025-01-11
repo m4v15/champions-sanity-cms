@@ -1,6 +1,8 @@
 import { PortableTextBlock } from "sanity";
 
-export type AboutType = {
+export type SiteContentType = {
   _id: string,
   aboutText: PortableTextBlock[],
+  landingTitle: string,
+  landingSubtitle: string
 };

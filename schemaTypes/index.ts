@@ -1,3 +1,3 @@
-import about from './about'
+import siteContent from './siteContent'
 
-export const schemaTypes = [about]
+export const schemaTypes = [siteContent]
