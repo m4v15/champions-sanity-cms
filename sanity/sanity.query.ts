@@ -11,3 +11,14 @@ export async function getContent() {
     }`
   );
 }
+
+export async function getLinks() {
+    return client.fetch(
+        groq`*[_type == "links"]{
+        _id,
+        text,
+        url,
+        type
+        }`
+    )
+}
