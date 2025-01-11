@@ -1,3 +1,4 @@
+export { default as About } from './About'
 export { default as Button } from './Button'
 export { default as ExternalLink } from './ExternalLink'
 export { default as Footer } from './Footer'
