@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 type INavbarProps = {
     links: Array<{
@@ -26,20 +27,20 @@ const Logo = () => {
 
 
 const NavBar = (props: INavbarProps) => {
-    const [route, setRoute] = useState('/')
+    const pathName = usePathname()
 
     return (
         <div className="border-gray mx-auto w-full border-b bg-gray-50 px-3 py-6">
             <div className="m-auto flex max-w-screen-lg flex-row flex-wrap items-center justify-between">
                 <div>
-                    <Link onClick={() => setRoute('/')} href="/"> <Logo /> </Link>
+                    <Link href="/"> <Logo /> </Link>
                 </div>
                 <nav>
                     <ul className="navbar flex items-center text-xl font-bold">
                         {props.links.map(link => {
-                            const textShade = route === link.route ? '900' : '400'
+                            const textShade = pathName.includes(link.route) ? '900' : '400'
                             return (<li key={link.route}>
-                                <Link href={link.route} className={`text-gray-${textShade} hover:text-gray-900 m-2`} onClick={() => setRoute(link.route)}>
+                                <Link href={link.route} className={`text-gray-${textShade} hover:text-gray-900 m-2`}>
                                     {link.display}
                                 </Link>
                             </li>)
