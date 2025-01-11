@@ -15,12 +15,16 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gridTemplateRows : {
+        'layout': 'auto 1fr auto',
+      },
       height: {
         'hero': '800px'
       },
       maxWidth: {
         'hero':'1400px'
       }
+      
     },
   },
   plugins: [],
