@@ -1,0 +1,19 @@
+name: Deploy Live Update
+on:
+  workflow_dispatch
+jobs:
+  uplaod-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build web assets
+        run: npm run build
+      - name: Deploy Live Update
+        uses: capawesome-team/cloud-live-update-action@v0.0.1
+        id: upload-action
+        with:
+          appId: 'dcdf5ce0-8ca9-4308-a130-2d8a7c393e62'
+          channel: 'production-1.0.0'
+          path: 'dist'
+          token: ${{ secrets.CAPAWESOME_TOKEN }}
