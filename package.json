@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint": "next lint"
   },
   "dependencies": {
     "@sanity/vision": "^3.68.3",

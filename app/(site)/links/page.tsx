@@ -6,6 +6,11 @@ import { Button, Section, ExternalLink } from '@/components'
 export default async function Links() {
     const links: SanityLinksType[] = await getLinks()
 
+    if (!links) {
+        return <div>Hi!</div>
+    }
+
+
     const projects = links && links.filter(link => link.type?.includes('project'))
     const media = links && links.filter(link => link.type?.includes('media'))
 

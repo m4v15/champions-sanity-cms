@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/app/globals.css";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import '@/app/globals.css';
 
-import { Footer, Navbar } from "@/components";
+import { Footer, Navbar } from '@/components';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const NavLinks = [
@@ -29,12 +29,12 @@ const NavLinks = [
 ]
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Gaza Champions",
+  title: 'Gaza Champions',
   description:
     'Initiative to find individuals to champion fundraising efforts from Gaza',
 };

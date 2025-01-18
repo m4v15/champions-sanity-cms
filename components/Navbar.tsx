@@ -13,7 +13,7 @@ type INavbarProps = {
 
 const Logo = () => {
     return (
-        <span className={`inline-flex items-center text-gray-900`}>
+        <span className={'inline-flex items-center text-gray-900'}>
             <Image
                 src="/logo.png"
                 alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
