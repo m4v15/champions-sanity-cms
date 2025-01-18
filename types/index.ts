@@ -1,4 +1,4 @@
-import { PortableTextBlock } from "sanity";
+import { PortableTextBlock } from 'sanity';
 
 export type SiteContentType = {
   _id: string,
@@ -7,7 +7,7 @@ export type SiteContentType = {
   landingSubtitle: string
 };
 
-type LinkType = "project" | "media";
+type LinkType = 'project' | 'media';
 
 export type SanityLinksType = {
   _id: string,
