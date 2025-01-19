@@ -2,12 +2,12 @@
 
 import { Section, Button } from '@/components'
 import { getContent } from '@/sanity/sanity.query';
-import { SiteContentType } from '@/types';
 
 import { useSanity } from '@/hooks';
 
 import Link from 'next/link';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { SiteContentType } from '@/types';
 
 
 const portableTextComponents: PortableTextComponents = {
@@ -16,10 +16,9 @@ const portableTextComponents: PortableTextComponents = {
   },
 }
 
-
 const About = () => {
 
-  const { data: content, loading } = useSanity(getContent)
+  const { data, loading } = useSanity<SiteContentType>(getContent)
 
   if (loading) {
     return <div>Loading</div>
@@ -29,9 +28,9 @@ const About = () => {
     <Section>
       <div className="mt-5 flex flex-col items-center text-gray-950">
         <div className="w-full text-left font-light">
-          {content && content[0] && (
+          {data && data[0] && (
             <PortableText
-              value={content[0].aboutText}
+              value={data[0].aboutText}
               components={portableTextComponents}
             />
           )}

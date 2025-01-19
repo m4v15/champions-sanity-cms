@@ -1,18 +1,22 @@
+'use client'
+
 import Link from 'next/link';
 import { getLinks } from '@/sanity/sanity.query';
-import { SanityLinksType } from '@/types';
 
 import { Button, Section, ExternalLink } from '@/components'
-export default async function Links() {
-    const links: SanityLinksType[] = await getLinks()
+import { useSanity } from '@/hooks';
+import { SanityLinksType } from '@/types';
 
-    if (!links) {
-        return <div>Hi!</div>
+
+export default function Links() {
+    const { data: links, loading } = useSanity<SanityLinksType>(getLinks)
+
+    if (loading) {
+        return <div>Loading Page</div>
     }
 
-
-    const projects = links && links.filter(link => link.type?.includes('project'))
-    const media = links && links.filter(link => link.type?.includes('media'))
+    const projects = links && links.filter(link => link?.type.includes('project'))
+    const media = links && links.filter(link => link?.type.includes('media'))
 
     return <div className="text-gray-600 antialiased">
         <Section>
@@ -21,7 +25,7 @@ export default async function Links() {
                     <div className="text-2xl font-bold">
                         Other Projects we are part of
                     </div>
-                    {projects.map(project => {
+                    {projects && projects.map(project => {
                         return (
                             <>
                                 <br />
@@ -37,7 +41,7 @@ export default async function Links() {
                     <div className="text-2xl font-bold">
                         Gaza Fundraising Coverage in the Media
                     </div>
-                    {media.map(media => {
+                    {media && media.map(media => {
                         return (
                             <>
                                 <br />
