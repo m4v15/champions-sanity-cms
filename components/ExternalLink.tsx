@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 type ExternalLinkProps = {
   url: string;
@@ -15,5 +15,5 @@ export default function ExternalLink(props: ExternalLinkProps) {
     >
       {props.text}
     </Link>
-  )
-};
+  );
+}

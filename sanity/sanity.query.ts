@@ -1,5 +1,5 @@
-import { groq } from 'next-sanity';
-import client from './sanity.client';
+import { groq } from "next-sanity";
+import client from "./sanity.client";
 
 export async function getContent() {
   return client.fetch(
@@ -8,18 +8,17 @@ export async function getContent() {
       aboutText,
       landingTitle,
       landingSubtitle
-    }`
+    }`,
   );
 }
 
-
 export async function getLinks() {
-    return client.fetch(
-        groq`*[_type == "links"]{
+  return client.fetch(
+    groq`*[_type == "links"]{
         _id,
         text,
         url,
         type
-        }`
-    )
+        }`,
+  );
 }

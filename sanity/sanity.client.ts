@@ -1,9 +1,9 @@
-import { createClient, type ClientConfig } from '@sanity/client';
+import { createClient, type ClientConfig } from "@sanity/client";
 
 const config: ClientConfig = {
-  projectId: 'whsvh8u8',
-  dataset: 'production',
-  apiVersion: '2025-01-11',
+  projectId: "whsvh8u8",
+  dataset: "production",
+  apiVersion: "2025-01-11",
   useCdn: true,
 };
 

@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-import '@/app/globals.css';
-
+import type { Metadata } from "next";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: 'Gaza Champions',
+  title: "Gaza Champions",
   description:
-    'Initiative to find individuals to champion fundraising efforts from Gaza',
+    "Initiative to find individuals to champion fundraising efforts from Gaza",
 };
 
 export default function RootLayout({
@@ -15,11 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={'antialiased'}
-      >
-        {children}
-      </body>
+      <body className={"antialiased"}>{children}</body>
     </html>
   );
 }

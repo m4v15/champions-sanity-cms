@@ -1,28 +1,26 @@
-'use client'
+"use client";
 
-import { Section, Button } from '@/components'
-import { getContent } from '@/sanity/sanity.query';
+import { Section, Button } from "@/components";
+import { getContent } from "@/sanity/sanity.query";
 
-import { useSanity } from '@/hooks';
+import { useSanity } from "@/hooks";
 
-import Link from 'next/link';
-import { PortableText, PortableTextComponents } from '@portabletext/react';
-import { SiteContentType } from '@/types';
-
+import Link from "next/link";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
+import { SiteContentType } from "@/types";
 
 const portableTextComponents: PortableTextComponents = {
   marks: {
-    strong: ({ children }) => <span className="font-semibold">{children}</span>
+    strong: ({ children }) => <span className="font-semibold">{children}</span>,
   },
-}
+};
 
 const About = () => {
-
-  const { data, loading } = useSanity<SiteContentType>(getContent)
-  console.log({ data })
+  const { data, loading } = useSanity<SiteContentType>(getContent);
+  console.log({ data });
 
   if (loading) {
-    return <div>Loading</div>
+    return <div>Loading</div>;
   }
 
   return (
@@ -42,11 +40,11 @@ const About = () => {
           target="_blank"
           className="pt-10"
         >
-          <Button text='Become A Champion' />
+          <Button text="Become A Champion" />
         </Link>
       </div>
     </Section>
-  )
+  );
 };
 
-export default About
+export default About;
