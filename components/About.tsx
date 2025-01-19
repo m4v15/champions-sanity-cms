@@ -19,6 +19,7 @@ const portableTextComponents: PortableTextComponents = {
 const About = () => {
 
   const { data, loading } = useSanity<SiteContentType>(getContent)
+  console.log({ data })
 
   if (loading) {
     return <div>Loading</div>
