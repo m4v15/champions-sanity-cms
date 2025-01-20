@@ -9,6 +9,8 @@ export async function getContent() {
       landingTitle,
       landingSubtitle
     }`,
+    undefined,
+    { cache: "no-store" },
   );
 }
 
