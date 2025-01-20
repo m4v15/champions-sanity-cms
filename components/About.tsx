@@ -7,7 +7,6 @@ import { useSanity } from "@/hooks";
 
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { SiteContentType } from "@/types";
 
 const portableTextComponents: PortableTextComponents = {
   marks: {
@@ -16,8 +15,7 @@ const portableTextComponents: PortableTextComponents = {
 };
 
 const About = () => {
-  const { data, loading } = useSanity<SiteContentType>(getContent);
-  console.log({ data });
+  const { data, loading } = useSanity(getContent);
 
   if (loading) {
     return <div>Loading</div>;
@@ -29,7 +27,7 @@ const About = () => {
         <div className="w-full text-left font-light">
           {data && data[0] && (
             <PortableText
-              value={data[0].aboutText}
+              value={data[0].aboutText || []}
               components={portableTextComponents}
             />
           )}

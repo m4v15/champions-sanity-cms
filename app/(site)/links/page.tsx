@@ -5,18 +5,16 @@ import { getLinks } from "@/sanity/sanity.query";
 
 import { Button, Section, ExternalLink } from "@/components";
 import { useSanity } from "@/hooks";
-import { SanityLinksType } from "@/types";
 
 export default function Links() {
-  const { data: links, loading } = useSanity<SanityLinksType>(getLinks);
+  const { data: links, loading } = useSanity(getLinks);
 
   if (loading) {
     return <div>Loading Page</div>;
   }
 
-  const projects =
-    links && links.filter((link) => link?.type.includes("project"));
-  const media = links && links.filter((link) => link?.type.includes("media"));
+  const projects = links?.filter((link) => link?.type?.includes("project"));
+  const media = links?.filter((link) => link?.type?.includes("media"));
 
   return (
     <div className="text-gray-600 antialiased">
@@ -27,28 +25,30 @@ export default function Links() {
               Other Projects we are part of
             </div>
             {projects &&
-              projects.map((project) => {
-                return (
-                  <ExternalLink
-                    key={project._id}
-                    url={project.url}
-                    text={project.text}
-                  />
-                );
+              projects.map(({ _id, url, text }) => {
+                return url && text &&
+                  (
+                    <ExternalLink
+                      key={_id}
+                      url={url}
+                      text={text}
+                    />
+                  );
               })}
             <br />
             <div className="text-2xl font-bold">
               Gaza Fundraising Coverage in the Media
             </div>
             {media &&
-              media.map((media) => {
-                return (
-                  <ExternalLink
-                    key={media._id}
-                    url={media.url}
-                    text={media.text}
-                  />
-                );
+              media.map(({ _id, url, text }) => {
+                return url && text &&
+                  (
+                    <ExternalLink
+                      key={_id}
+                      url={url}
+                      text={text}
+                    />
+                  );
               })}
           </div>
           <br />

@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 
-type QueryType<Type> = () => Promise<Type[]>;
 
 type QueryResult<Type> = {
-  data: Type[] | undefined;
+  data: Type | undefined;
   loading: boolean;
 };
 
-function useSanity<Type>(sanityQuery: QueryType<Type>): QueryResult<Type> {
-  const [data, setData] = useState<Type[]>();
+function useSanity<Type>(fetchFunction: () => Promise<Type>): QueryResult<Type> {
+  const [data, setData] = useState<Type>();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      const result = await sanityQuery();
+      const result = await fetchFunction();
       setData(result);
       setLoading(false);
     }
