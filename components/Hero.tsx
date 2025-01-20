@@ -1,10 +1,9 @@
 import { Button } from "@/components";
 import Link from "next/link";
 import { getContent } from "@/sanity/sanity.query";
-import { SiteContentType } from "@/types";
 
 const Hero = async () => {
-  const content: SiteContentType[] = await getContent();
+  const content = await getContent();
 
   return (
     <div className="bg-hero bg-center bg-no-repeat bg-cover h-hero max-w-hero mx-auto w-full">
