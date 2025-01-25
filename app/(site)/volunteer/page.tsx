@@ -13,12 +13,12 @@ type VolunteerSectionProps = {
 
 const VolunteerSection = (props: VolunteerSectionProps) => {
   return (
-    <div className={`sm:order-${props.order}`}>
+    <div className={`sm:order-${props.order} flex flex-col items-center gap-6 h-full justify-between`}>
       <h2 className="text-2xl font-bold text-gray-800 md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight">
         {props.title}
       </h2>
 
-      <div className="mt-6 flex-col items-center sm:mt-10">
+      <div className="flex-col items-center">
         {props.description}
       </div>
       <Link href={props.link} rel="noopener noreferrer" target="_blank">

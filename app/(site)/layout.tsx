@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 
 import { Footer, Navbar } from "@/components";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const NavLinks = [
   {
@@ -28,11 +22,6 @@ const NavLinks = [
   },
 ];
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Gaza Champions",
   description:
@@ -47,12 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-layout bg-gray-50`}
+        className='antialiased min-h-screen grid grid-rows-layout bg-gray-50 font-sans'
       >
         <Navbar links={NavLinks} />
         {children}
         <Footer />
       </body>
-    </html>
+    </html >
   );
 }
