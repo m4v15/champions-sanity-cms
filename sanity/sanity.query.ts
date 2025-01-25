@@ -19,8 +19,22 @@ export const linksQuery = defineQuery(
     }`,
 );
 
+export const fundsQuery = defineQuery(
+  `*[_type == "funds"]{
+    _id,
+    title,
+    url,
+    imageUrl,
+    raised,
+    target
+    }`,
+);
+
 export const getContent = async () =>
   await client.fetch(contentQuery, undefined, { cache: "no-store" });
 
 export const getLinks = async () =>
   await client.fetch(linksQuery, undefined, { cache: "no-store" });
+
+export const getFunds = async () =>
+  await client.fetch(fundsQuery, undefined, { cache: "no-store" });
