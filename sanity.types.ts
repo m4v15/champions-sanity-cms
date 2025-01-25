@@ -131,6 +131,20 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
+export type Funds = {
+  _id: string;
+  _type: "funds";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  url?: string;
+  imageUrl?: string;
+  raised?: number;
+  target?: number;
+  currency?: string;
+};
+
 export type Links = {
   _id: string;
   _type: "links";
@@ -183,6 +197,7 @@ export type AllSanitySchemaTypes =
   | Geopoint
   | Slug
   | SanityAssetSourceData
+  | Funds
   | Links
   | SiteContent;
 export declare const internalGroqTypeReferenceTo: unique symbol;
@@ -220,6 +235,17 @@ export type LinksQueryResult = Array<{
   url: string | null;
   type: Array<string> | null;
 }>;
+// Variable: fundsQuery
+// Query: *[_type == "funds"]{    _id,    title,    url,    imageUrl,    raised,    target,    currency    }
+export type FundsQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  url: string | null;
+  imageUrl: string | null;
+  raised: number | null;
+  target: number | null;
+  currency: string | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -227,5 +253,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "siteContent" && contentName == "Main Page"]{\n    _id,\n    aboutText,\n    landingTitle,\n    landingSubtitle\n    }': ContentQueryResult;
     '*[_type == "links"]{\n    _id,\n    text,\n    url,\n    type\n    }': LinksQueryResult;
+    '*[_type == "funds"]{\n    _id,\n    title,\n    url,\n    imageUrl,\n    raised,\n    target,\n    currency\n    }': FundsQueryResult;
   }
 }

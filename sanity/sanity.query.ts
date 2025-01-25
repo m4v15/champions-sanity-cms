@@ -26,7 +26,8 @@ export const fundsQuery = defineQuery(
     url,
     imageUrl,
     raised,
-    target
+    target,
+    currency
     }`,
 );
 

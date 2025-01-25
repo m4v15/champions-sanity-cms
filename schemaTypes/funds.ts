@@ -30,15 +30,27 @@ const funds = {
     defineField({
       name: "raised",
       title: "Money Raised",
-      type: "string",
-      description: "Money raised so far - include the currency symbol",
+      type: "number",
+      description: "Money raised so far",
     }),
     defineField({
       name: "target",
       title: "Target",
-      type: "string",
-      description: "Fund target include the currency symbol",
+      type: "number",
+      description: "Fund target",
     }),
+    defineField({
+      name: "currency",
+      title: "Currency Symbol",
+      type: "string",
+    }),
+  ],
+  orderings: [
+    {
+      title: "Raised Lowest to Highest",
+      name: "raisedAsc",
+      by: [{ field: "raised", direction: "asc" }],
+    },
   ],
 };
 
