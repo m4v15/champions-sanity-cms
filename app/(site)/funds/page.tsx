@@ -1,4 +1,11 @@
-export default function Fundraisers() {
+import { Card } from "@/components";
+import { getFunds } from "@/sanity/sanity.query";
+
+
+export default async function Fundraisers() {
+
+  const funds = await getFunds()
+
   return (
     <div className="text-gray-800 antialiased">
       <div className="mx-auto max-w-screen-xl p-3">
@@ -15,6 +22,9 @@ export default function Fundraisers() {
             directly
           </p>
           <br />
+        </div>
+        <div className="margin auto flex flex-wrap">
+          {funds.sort((a, b) => (a.raised || 0) > (b.raised || 0) ? 1 : -1).map(fund => <Card key={fund._id} {...fund} />)}
         </div>
       </div>
     </div>
