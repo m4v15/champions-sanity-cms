@@ -1,17 +1,12 @@
-"use client";
 
 import Link from "next/link";
 import { getLinks } from "@/sanity/sanity.query";
 
 import { Button, Section, ExternalLink } from "@/components";
-import { useSanity } from "@/hooks";
 
-export default function Links() {
-  const { data: links, loading } = useSanity(getLinks);
+export default async function Links() {
+  const links = await getLinks()
 
-  if (loading) {
-    return <div>Loading Page</div>;
-  }
 
   const projects = links?.filter((link) => link?.type?.includes("project"));
   const media = links?.filter((link) => link?.type?.includes("media"));

@@ -1,9 +1,5 @@
-"use client";
-
 import { Section, Button } from "@/components";
 import { getContent } from "@/sanity/sanity.query";
-
-import { useSanity } from "@/hooks";
 
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
@@ -14,20 +10,16 @@ const portableTextComponents: PortableTextComponents = {
   },
 };
 
-const About = () => {
-  const { data, loading } = useSanity(getContent);
-
-  if (loading) {
-    return <div>Loading</div>;
-  }
+const About = async () => {
+  const [content] = await getContent()
 
   return (
     <Section>
       <div className="mt-5 flex flex-col items-center text-gray-950">
         <div className="w-full text-left font-light">
-          {data && data[0] && (
+          {content && (
             <PortableText
-              value={data[0].aboutText || []}
+              value={content.aboutText || []}
               components={portableTextComponents}
             />
           )}
