@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 type INavbarProps = {
   links: Array<{
@@ -12,10 +13,16 @@ type INavbarProps = {
 };
 
 const Logo = () => {
+  const [hover, setHover] = useState(false)
+
   return (
-    <span className={"inline-flex items-center text-gray-900"}>
+    <span
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={"inline-flex items-center"}
+    >
       <Image
-        src="/logo.png"
+        src={hover ? "logo/SVG/transparent-logo-black.svg" : "logo/SVG/logo-red.svg"}
         alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
         width={32}
         height={32}
@@ -28,23 +35,22 @@ const NavBar = (props: INavbarProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="border-gray mx-auto w-full border-b bg-gray-50 px-3 py-6 sticky top-0">
+    <div className="border-gray mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header">
       <div className="m-auto flex max-w-screen-lg flex-row flex-wrap items-center justify-between">
         <div>
           <Link href="/">
-            {" "}
-            <Logo />{" "}
+            <Logo />
           </Link>
         </div>
         <nav>
           <ul className="navbar flex items-center text-xl font-bold">
             {props.links.map((link) => {
-              const textShade = pathName.includes(link.route) ? "900" : "500";
+              const textColour = pathName.includes(link.route) ? "text-theme-red-900" : "text-dark";
               return (
                 <li key={link.route}>
                   <Link
                     href={link.route}
-                    className={`text-gray-${textShade} hover:text-gray-900 m-2`}
+                    className={`${textColour} hover:text-theme-red-900 m-2 last:mr-4`}
                   >
                     {link.display}
                   </Link>
@@ -54,13 +60,12 @@ const NavBar = (props: INavbarProps) => {
             <li>
               <Link
                 href="https://www.instagram.com/gaza.champions/"
-                className="text-gray-500 hover:text-gray-900"
+                className="hover:text-theme-red-900"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <svg
-                  className="size-5"
-                  fill="currentColor"
+                  className="size-5 fill-current"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >

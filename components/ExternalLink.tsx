@@ -11,7 +11,7 @@ export default function ExternalLink(props: ExternalLinkProps) {
       href={props.url}
       rel="noopener noreferrer"
       target="_blank"
-      className="italic underline decoration-pink-600 hover:decoration-pink-200 my-4"
+      className="italic underline decoration-theme-red-900 hover:decoration-theme-red-200 my-4"
     >
       {props.text}
     </Link>

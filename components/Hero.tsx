@@ -6,28 +6,24 @@ const Hero = async () => {
   const [content] = await getContent();
 
   return (
-    <div className="bg-hero bg-center bg-no-repeat bg-cover h-hero max-w-hero mx-auto w-full">
-      <header className="text-left mx-auto max-w-screen-lg px-3 pt-8">
-        <h1 className="whitespace-pre-line text-2xl font-bold leading-hero text-gray-100">
-          <span className="text-3xl text-gray-900">
+    <div className="bg-hero bg-center bg-no-repeat bg-cover h-hero max-w-hero mx-auto w-full grid grid-rows-[1fr,auto]">
+      <header className="p-10 row-start-2 text-left bg-green mx-auto flex flex-col gap-3 bg-theme-green-transparent  text-light justify-end">
+        <h1 className="whitespace-pre-line leading-hero">
+          <span className="text-3xl font-header">
             {content && content.landingTitle}
           </span>
         </h1>
-        <div className="mb-16 mt-4 text-xl text-gray-100">
+        <div className="text-xl">
           {content && content.landingSubtitle}
         </div>
-
-        <Link href="/volunteer">
+        <Link href="/volunteer" className="self-end">
           <Button text="Volunteer With Us" />
         </Link>
-
-        <br />
-        <br />
-        <Link href="/funds">
+        <Link href="/funds" className="self-end">
           <Button text="See the funds we're supporting" />
         </Link>
       </header>
-    </div>
+    </div >
   );
 };
 

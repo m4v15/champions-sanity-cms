@@ -12,9 +12,9 @@ export default async function Links() {
   const media = links?.filter((link) => link?.type?.includes("media"));
 
   return (
-    <div className="text-gray-600 antialiased">
+    <div className="antialiased">
       <Section>
-        <div className="mt-5 flex flex-col items-center text-gray-950">
+        <div className="mt-5 flex flex-col items-center">
           <div className="w-full text-left flex flex-col">
             <div className="text-2xl font-bold">
               Other Projects we are part of
