@@ -86,7 +86,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
-        header: ["Sailors"],
+        header: ["Roboto Flex"],
       },
       gridTemplateRows: {
         layout: "auto 1fr auto",
