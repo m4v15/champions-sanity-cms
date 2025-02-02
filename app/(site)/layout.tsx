@@ -5,8 +5,9 @@ import { Footer, Navbar } from "@/components";
 
 const NavLinks = [
   {
-    route: "/about",
-    display: "about",
+    route: "https://gazachampions.substack.com/",
+    display: "newsletter",
+    external: true
   },
   {
     route: "/volunteer",
@@ -20,6 +21,10 @@ const NavLinks = [
     route: "/links",
     display: "links",
   },
+  {
+    route: "/about",
+    display: "about",
+  }
 ];
 
 export const metadata: Metadata = {

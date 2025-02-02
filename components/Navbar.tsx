@@ -9,6 +9,7 @@ type INavbarProps = {
   links: Array<{
     route: string;
     display: string;
+    external?: boolean;
   }>;
 };
 
@@ -31,6 +32,13 @@ const Logo = () => {
   );
 };
 
+type linkPropsType = {
+  href: string;
+  className: string;
+  rel?: string;
+  target?: string;
+}
+
 const NavBar = (props: INavbarProps) => {
   const pathName = usePathname();
 
@@ -46,11 +54,18 @@ const NavBar = (props: INavbarProps) => {
           <ul className="navbar flex items-center text-xl font-bold">
             {props.links.map((link) => {
               const textColour = pathName.includes(link.route) ? "text-theme-red-900" : "text-dark";
+              const linkProps: linkPropsType = {
+                href: link.route,
+                className: `${textColour} hover:text-theme-red-900 m-2 last:mr-4`
+              }
+              if (link.external) {
+                linkProps.rel = "noopener noreferrer"
+                linkProps.target = "_blank"
+              }
               return (
                 <li key={link.route}>
                   <Link
-                    href={link.route}
-                    className={`${textColour} hover:text-theme-red-900 m-2 last:mr-4`}
+                    {...linkProps}
                   >
                     {link.display}
                   </Link>
@@ -80,7 +95,7 @@ const NavBar = (props: INavbarProps) => {
           </ul>
         </nav>
       </div>
-    </div>
+    </div >
   );
 };
 
