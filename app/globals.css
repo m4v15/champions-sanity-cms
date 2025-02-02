@@ -6,6 +6,6 @@
 @layer base {
   @font-face {
     font-family: "Sailors";
-    src: url("./fonts/sailors.ttf");
+    src: url("/fonts/sailors.ttf");
   }
 }
