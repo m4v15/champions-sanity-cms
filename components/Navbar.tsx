@@ -43,7 +43,7 @@ const NavBar = (props: INavbarProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="border-gray mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header">
+    <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header">
       <div className="m-auto flex max-w-screen-lg flex-row flex-wrap items-center justify-between">
         <div>
           <Link href="/">
@@ -53,10 +53,10 @@ const NavBar = (props: INavbarProps) => {
         <nav>
           <ul className="navbar flex items-center text-xl font-bold">
             {props.links.map((link) => {
-              const textColour = pathName.includes(link.route) ? "text-theme-red-900" : "text-dark";
+              const textColour = pathName.includes(link.route) ? "text-theme-red-800" : "text-dark";
               const linkProps: linkPropsType = {
                 href: link.route,
-                className: `${textColour} hover:text-theme-red-900 m-2 last:mr-4`
+                className: `${textColour} hover:text-theme-red-800 m-2 last:mr-4`
               }
               if (link.external) {
                 linkProps.rel = "noopener noreferrer"
@@ -75,7 +75,7 @@ const NavBar = (props: INavbarProps) => {
             <li>
               <Link
                 href="https://www.instagram.com/gaza.champions/"
-                className="hover:text-theme-red-900"
+                className="hover:text-theme-red-800"
                 rel="noopener noreferrer"
                 target="_blank"
               >

@@ -21,7 +21,7 @@ const Footer = () => (
     <div className="flex space-x-6 sm:justify-center">
       <Link
         href="https://www.instagram.com/gaza.champions/"
-        className="text-light hover:text-theme-red-900 cursor-pointer"
+        className="text-light hover:text-theme-red-800 cursor-pointer"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -40,7 +40,7 @@ const Footer = () => (
       </Link>
       <Link
         href="https://www.github.com/m4v15"
-        className="hover:text-theme-red-900 cursor-pointer"
+        className="hover:text-theme-red-800 cursor-pointer"
         rel="noopener noreferrer"
         target="_blank"
       >
