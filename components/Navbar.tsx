@@ -13,17 +13,22 @@ type INavbarProps = {
 };
 
 const Logo = () => {
+  const height = 50
 
   return (
     <span
-      className={"inline-flex items-center hover:scale-105"}
+      className={"inline-flex items-center hover:scale-105 mb-3 md:mb-0"}
     >
       <Image
         src={"logo/SVG/transparent-logo-red.svg"}
         alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
-        width={32}
-        height={32}
+        width={height}
+        height={height}
       />
+      <div className="flex flex-col font-header text-theme-red-800 text-xl ml-2 font-bold">
+        <span>GAZA</span>
+        <span>CHAMPIONS</span>
+      </div>
     </span>
   );
 };
@@ -41,11 +46,9 @@ const NavBar = (props: INavbarProps) => {
   return (
     <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header">
       <div className="m-auto flex max-w-screen-lg flex-row flex-wrap items-center justify-between">
-        <div>
-          <Link href="/">
-            <Logo />
-          </Link>
-        </div>
+        <Link href="/">
+          <Logo />
+        </Link>
         <nav>
           <ul className="navbar flex items-center text-xl font-bold">
             {props.links.map((link) => {
