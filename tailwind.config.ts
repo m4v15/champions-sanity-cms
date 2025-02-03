@@ -29,7 +29,7 @@ export default {
           "800": "#48492b",
           "900": "#3d3f28",
           "950": "#202112",
-          transparent: "#595a3180",
+          transparent: "#86854880",
         },
         "theme-red": {
           "50": "#fef3f2",
