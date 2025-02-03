@@ -34,7 +34,7 @@ export default function Volunteer() {
       <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="grid gap-8 sm:grid-cols-2 sm:items-start">
           <VolunteerSection
-            title="Be a Champion"
+            title="Become a Champion"
             description={
               <>
                 <p className="ms-1 font-semibold sm:mb-1 sm:ms-2">

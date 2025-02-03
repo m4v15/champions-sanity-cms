@@ -3,29 +3,7 @@ import "@/app/globals.css";
 
 import { Footer, Navbar } from "@/components";
 
-const NavLinks = [
-  {
-    route: "https://gazachampions.substack.com/",
-    display: "newsletter",
-    external: true
-  },
-  {
-    route: "/volunteer",
-    display: "volunteer",
-  },
-  {
-    route: "/funds",
-    display: "funds",
-  },
-  {
-    route: "/links",
-    display: "links",
-  },
-  {
-    route: "/about",
-    display: "about",
-  }
-];
+import { NavLinks } from "@/utils/AppConfig";
 
 export const metadata: Metadata = {
   title: "Gaza Champions",

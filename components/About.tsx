@@ -8,6 +8,9 @@ const portableTextComponents: PortableTextComponents = {
   marks: {
     strong: ({ children }) => <span className="font-semibold">{children}</span>,
   },
+  block: {
+    h3: ({ children }) => <span className="mt-5 font-semibold text-xl">{children}</span>,
+  }
 };
 
 const About = async () => {
@@ -15,8 +18,8 @@ const About = async () => {
 
   return (
     <Section>
-      <div className="mt-5 flex flex-col items-center">
-        <div className="w-full text-left font-light">
+      <div className="flex flex-col items-center">
+        <div className="w-full text-left font-light flex flex-col gap-2">
           {content && (
             <PortableText
               value={content.aboutText || []}

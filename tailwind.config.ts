@@ -14,7 +14,7 @@ export default {
         "black-logo": "url('/logo/3x/transparent-logo-white@3x.png')",
       },
       colors: {
-        background: "#e8e8dd",
+        background: "#f7f7f3",
         dark: "#39372e",
         light: "#f7f7f3",
         "theme-green": {
