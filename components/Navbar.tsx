@@ -44,8 +44,8 @@ const NavBar = (props: INavbarProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header">
-      <div className="m-auto flex max-w-screen-lg flex-row flex-wrap items-center justify-between">
+    <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header md:px-12">
+      <div className="m-auto flex flex-row flex-wrap items-center justify-between">
         <Link href="/">
           <Logo />
         </Link>
