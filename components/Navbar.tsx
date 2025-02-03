@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 type INavbarProps = {
   links: Array<{
@@ -14,16 +13,13 @@ type INavbarProps = {
 };
 
 const Logo = () => {
-  const [hover, setHover] = useState(false)
 
   return (
     <span
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className={"inline-flex items-center"}
+      className={"inline-flex items-center hover:scale-105"}
     >
       <Image
-        src={hover ? "logo/SVG/transparent-logo-black.svg" : "logo/SVG/logo-red.svg"}
+        src={"logo/SVG/transparent-logo-red.svg"}
         alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
         width={32}
         height={32}

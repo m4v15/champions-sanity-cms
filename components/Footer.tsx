@@ -6,7 +6,15 @@ const Footer = () => (
   <footer className=" w-full bg-background p-4 text-xs shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8">
     <ul className="mb-6 flex flex-wrap items-center md:mb-0">
       <li className="footer-copyright">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}.
+        © Copyright {new Date().getFullYear()} {AppConfig.title} -{" "}
+        <Link
+          className="hover:text-theme-red-800 decoration-theme-red-900 underline"
+          href="https://mqumboz.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Logo created by our friend Mohammed Qumboz{" "}
+        </Link>
         <Link
           className=" text-background"
           href="https://creativedesignsguru.com"
@@ -16,6 +24,7 @@ const Footer = () => (
           CreativeDesignsGuru{" "}
         </Link>
         .
+
       </li>
     </ul>
     <div className="flex space-x-6 sm:justify-center">
