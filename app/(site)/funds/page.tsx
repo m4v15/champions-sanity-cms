@@ -7,7 +7,7 @@ export default async function Fundraisers() {
   const funds = await getFunds()
 
   return (
-    <div className="text-gray-800 antialiased">
+    <div className="antialiased">
       <div className="mx-auto max-w-screen-xl p-3">
         <div className="w-full text-left">
           <div className=" text-2xl font-bold">Funds We&apos;re Supporting</div>

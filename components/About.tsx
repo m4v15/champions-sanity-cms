@@ -15,7 +15,7 @@ const About = async () => {
 
   return (
     <Section>
-      <div className="mt-5 flex flex-col items-center text-gray-950">
+      <div className="mt-5 flex flex-col items-center">
         <div className="w-full text-left font-light">
           {content && (
             <PortableText

@@ -5,8 +5,9 @@ import { Footer, Navbar } from "@/components";
 
 const NavLinks = [
   {
-    route: "/about",
-    display: "about",
+    route: "https://gazachampions.substack.com/",
+    display: "newsletter",
+    external: true
   },
   {
     route: "/volunteer",
@@ -20,6 +21,10 @@ const NavLinks = [
     route: "/links",
     display: "links",
   },
+  {
+    route: "/about",
+    display: "about",
+  }
 ];
 
 export const metadata: Metadata = {
@@ -36,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className='antialiased min-h-screen grid grid-rows-layout bg-gray-50 font-sans'
+        className='antialiased min-h-screen grid grid-rows-layout bg-background font-sans text-dark'
       >
         <Navbar links={NavLinks} />
         {children}

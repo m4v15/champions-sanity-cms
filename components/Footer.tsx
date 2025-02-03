@@ -3,11 +3,12 @@ import Link from "next/link";
 import { AppConfig } from "@/utils/AppConfig";
 
 const Footer = () => (
-  <footer className=" w-full bg-white p-4 text-xs shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8">
+  <footer className=" w-full bg-background p-4 text-xs shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8">
     <ul className="mb-6 flex flex-wrap items-center md:mb-0">
       <li className="footer-copyright">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{" "}
+        © Copyright {new Date().getFullYear()} {AppConfig.title}.
         <Link
+          className=" text-background"
           href="https://creativedesignsguru.com"
           rel="noopener noreferrer"
           target="_blank"
@@ -20,7 +21,7 @@ const Footer = () => (
     <div className="flex space-x-6 sm:justify-center">
       <Link
         href="https://www.instagram.com/gaza.champions/"
-        className="text-gray-500 hover:text-gray-90 cursor-pointer"
+        className="text-light hover:text-theme-red-800 cursor-pointer"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -39,7 +40,7 @@ const Footer = () => (
       </Link>
       <Link
         href="https://www.github.com/m4v15"
-        className="text-gray-500 hover:text-gray-900 cursor-pointer"
+        className="hover:text-theme-red-800 cursor-pointer"
         rel="noopener noreferrer"
         target="_blank"
       >

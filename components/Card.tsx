@@ -6,22 +6,22 @@ type Unpacked<T> = T extends (infer U)[] ? U : T;
 
 export default function Card(props: Unpacked<FundsQueryResult>) {
     return (
-        <div className="flex flex-col m-2 max-w-sm rounded-lg border border-gray-200 bg-white shadow">
+        <div className="flex flex-col m-2 max-w-sm border border-gray-200 bg-white shadow">
             <Link className="flex flex-col flex-grow" href={props.url || ''} rel=" noopener noreferrer" target="_blank">
-                <img className="rounded-t-lg" src={props.imageUrl || ''} alt="" />
+                <img src={props.imageUrl || ''} alt="" />
 
                 <div className="p-5 flex flex-col items-center justify-between flex-grow">
 
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
                         {props.title}
                     </h5>
                     <div className="mb-3 flex items-center justify-start">
-                        <p className="mr-2 text-xl font-bold text-gray-700">
+                        <p className="mr-2 text-xl font-bold">
                             {(props.currency || '$') + props.raised || '0'} raised so far
                         </p>
                     </div>
                     <div
-                        className="inline-flex items-center rounded-lg bg-lime-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-lime-900 focus:outline-none focus:ring-4 focus:ring-red-300 "
+                        className="inline-flex items-center bg-theme-green-900 px-3 py-2 text-center text-sm font-medium text-light hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300 "
 
                     >
                         Donate
