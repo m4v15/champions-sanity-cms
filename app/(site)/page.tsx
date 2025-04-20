@@ -29,13 +29,9 @@ const Landing = () => {
           </div>
         </div>
         <div className="relative rounded grow overflow-hidden h-[25vh] lg:h-auto">
-
           <div className="bg-hero w-[400%] bg-contain h-full bg-repeat-x lg:animate-scroll absolute">
           </div>
         </div>
-
-
-
       </div>
     </div >
   )
