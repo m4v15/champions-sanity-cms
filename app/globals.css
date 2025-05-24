@@ -1,7 +1,115 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap')
+layer(base);
+@import 'tailwindcss';
+
+@theme {
+  --animate-scroll: scroll 30s linear infinite;
+
+  --background-image-hero: url('/mapround.png');
+  --background-image-red-logo: url('/logo/3x/logo-red@3x.png');
+  --background-image-black-logo: url('/logo/3x/transparent-logo-white@3x.png');
+
+  --color-background: #f7f7f3;
+  --color-dark: #39372e;
+  --color-light: #f7f7f3;
+
+  --color-theme-green-50: #f7f6ee;
+  --color-theme-green-100: #edebda;
+  --color-theme-green-200: #dcdaba;
+  --color-theme-green-300: #c6c490;
+  --color-theme-green-400: #afac6c;
+  --color-theme-green-500: #868548;
+  --color-theme-green-600: #74743c;
+  --color-theme-green-700: #595a31;
+  --color-theme-green-800: #48492b;
+  --color-theme-green-900: #3d3f28;
+  --color-theme-green-950: #202112;
+  --color-theme-green-transparent: #86854880;
+
+  --color-theme-red-50: #fef3f2;
+  --color-theme-red-100: #ffe4e1;
+  --color-theme-red-200: #ffcec9;
+  --color-theme-red-300: #feaba3;
+  --color-theme-red-400: #fc796d;
+  --color-theme-red-500: #f44e3f;
+  --color-theme-red-600: #e13121;
+  --color-theme-red-700: #bd2618;
+  --color-theme-red-800: #a72519;
+  --color-theme-red-900: #82231a;
+  --color-theme-red-950: #470d08;
+
+  --color-theme-orange-50: #fff8ed;
+  --color-theme-orange-100: #fef0d6;
+  --color-theme-orange-200: #fddcab;
+  --color-theme-orange-300: #fbc376;
+  --color-theme-orange-400: #f89e3f;
+  --color-theme-orange-500: #f68926;
+  --color-theme-orange-600: #e7670f;
+  --color-theme-orange-700: #bf4e0f;
+  --color-theme-orange-800: #983e14;
+  --color-theme-orange-900: #7a3514;
+  --color-theme-orange-950: #421908;
+
+  --color-theme-white-50: #f7f7f3;
+  --color-theme-white-100: #e8e8dd;
+  --color-theme-white-200: #d0cfb7;
+  --color-theme-white-300: #c1bfa0;
+  --color-theme-white-400: #a7a278;
+  --color-theme-white-500: #999067;
+  --color-theme-white-600: #867959;
+  --color-theme-white-700: #71624c;
+  --color-theme-white-800: #5e5242;
+  --color-theme-white-900: #4f4438;
+  --color-theme-white-950: #2b241d;
+
+  --color-theme-black-50: #f4f3f1;
+  --color-theme-black-100: #e7e4e0;
+  --color-theme-black-200: #d2cec4;
+  --color-theme-black-300: #b7b09f;
+  --color-theme-black-400: #9c947f;
+  --color-theme-black-500: #807862;
+  --color-theme-black-600: #645e4c;
+  --color-theme-black-700: #4b473a;
+  --color-theme-black-800: #413e33;
+  --color-theme-black-900: #39372e;
+  --color-theme-black-950: #1d1b16;
+
+  --font-sans: Inter, Arial, sans-serif;
+  --font-header: Sailors;
+
+  --grid-template-rows-layout: auto 1fr auto;
+
+  --height-hero: 800px;
+
+  --container-hero: 1400px;
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   @font-face {
