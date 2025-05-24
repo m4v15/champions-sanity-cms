@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 
-import { Footer, Navbar } from "@/components";
+import { Navbar } from "@/components";
 
 import { NavLinks } from "@/utils/AppConfig";
 
@@ -18,12 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className='antialiased min-h-screen grid grid-rows-layout bg-background font-sans text-dark'
-      >
+      <body className="antialiased font-sans text-dark">
         <Navbar links={NavLinks} />
+
         {children}
-        <Footer />
+
       </body>
     </html >
   );

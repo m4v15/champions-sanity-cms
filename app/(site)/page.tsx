@@ -1,12 +1,5 @@
-import { About, Hero } from "@/components";
+import { Home } from "@/scenes"
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <div className="mx-auto max-w-screen-lg">
-        <About />
-      </div>
-    </>
-  );
-}
+const Landing = () => <Home />
+
+export default Landing

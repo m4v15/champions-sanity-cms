@@ -5,11 +5,21 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./scenes/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      animation: {
+        scroll: "scroll 30s linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
       backgroundImage: {
-        hero: "url('/gaza-beach.jpeg')",
+        hero: "url('/mapround.png')",
         "red-logo": "url('/logo/3x/logo-red@3x.png')",
         "black-logo": "url('/logo/3x/transparent-logo-white@3x.png')",
       },

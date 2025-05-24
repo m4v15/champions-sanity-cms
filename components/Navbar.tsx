@@ -44,13 +44,13 @@ const NavBar = (props: INavbarProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header md:px-12">
+    <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header md:px-12 z-50">
       <div className="m-auto flex flex-row flex-wrap items-center justify-between">
         <Link href="/">
           <Logo />
         </Link>
         <nav>
-          <ul className="navbar flex items-center text-xl font-bold">
+          <ul className="navbar flex items-center flex-wrap text-xl font-bold">
             {props.links.map((link) => {
               const textColour = pathName.includes(link.route) ? "text-theme-red-800" : "text-dark";
               const linkProps: linkPropsType = {

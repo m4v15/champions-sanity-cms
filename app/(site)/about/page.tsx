@@ -1,4 +1,4 @@
-import { About } from "@/components";
+import { About } from "@/scenes";
 
 export default function Home() {
   return (
