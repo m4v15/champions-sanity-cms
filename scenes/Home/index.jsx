@@ -1,12 +1,13 @@
-import { Hero, Insta } from "./components";
+import { Hero, Insta, Substack } from "./components";
 import Faqs from "@/components/Faqs";
 
 const Home = () => {
   return (
     <div className="relative isolate overflow-hidden bg-white">
       <Hero />
-      <Faqs />
+      <Substack />
       <Insta />
+      <Faqs />
     </div>
   );
 };
