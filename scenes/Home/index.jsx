@@ -1,13 +1,11 @@
 import { Hero, Insta, Substack } from "./components";
-import Faqs from "@/components/Faqs";
 
 const Home = () => {
   return (
-    <div className="relative isolate overflow-hidden bg-white">
+    <div className="relative isolate overflow-hidden bg-white grid grid-rows-[1fr_auto_auto] gap-1">
       <Hero />
       <Substack />
       <Insta />
-      <Faqs />
     </div>
   );
 };
