@@ -32,10 +32,11 @@ export const fundsQuery = defineQuery(
 );
 
 export const faqsQuery = defineQuery(
-  `*[_type == "faqs" && hide == false]{
+  `*[_type == "faqs" && hide != true]{
     _id,
     question,
     answer,
+    hide
     }`,
 );
 
