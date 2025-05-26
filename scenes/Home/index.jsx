@@ -1,4 +1,4 @@
-import { Hero, Insta, Substack } from "./components";
+import { Faqs, Hero, Insta, Substack } from "./components";
 
 const Home = () => {
   return (
@@ -6,6 +6,7 @@ const Home = () => {
       <Hero />
       <Substack />
       <Insta />
+      <Faqs />
     </div>
   );
 };
