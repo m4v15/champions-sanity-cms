@@ -26,6 +26,19 @@ const faqs = {
       type: "boolean",
       description: "To hide the question from the site",
     }),
+    defineField({
+      name: "order",
+      title: "Order Priority",
+      type: "number",
+      description: "Lower numbers will appear higher up on the website",
+    }),
+  ],
+  orderings: [
+    {
+      title: "Order",
+      name: "order",
+      by: [{ field: "order", direction: "asc" }],
+    },
   ],
 };
 

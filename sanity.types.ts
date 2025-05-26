@@ -157,6 +157,7 @@ export type Faqs = {
     _key: string;
   }>;
   hide?: boolean;
+  order?: number;
 };
 
 export type Funds = {
@@ -276,7 +277,7 @@ export type FundsQueryResult = Array<{
   currency: string | null;
 }>;
 // Variable: faqsQuery
-// Query: *[_type == "faqs" && hide == false]{    _id,    question,    answer,    }
+// Query: *[_type == "faqs" && hide != true] | order(order, asc) {    _id,    question,    answer,    hide    }
 export type FaqsQueryResult = Array<{
   _id: string;
   question: string | null;
@@ -298,6 +299,7 @@ export type FaqsQueryResult = Array<{
     _type: "block";
     _key: string;
   }> | null;
+  hide: boolean | null;
 }>;
 
 // Query TypeMap
@@ -307,6 +309,6 @@ declare module "@sanity/client" {
     '*[_type == "siteContent" && contentName == "Main Page"]{\n    _id,\n    aboutText,\n    landingTitle,\n    landingSubtitle\n    }': ContentQueryResult;
     '*[_type == "links"]{\n    _id,\n    text,\n    url,\n    type\n    }': LinksQueryResult;
     '*[_type == "funds"]{\n    _id,\n    title,\n    url,\n    imageUrl,\n    raised,\n    target,\n    currency\n    }': FundsQueryResult;
-    '*[_type == "faqs" && hide == false]{\n    _id,\n    question,\n    answer,\n    }': FaqsQueryResult;
+    '*[_type == "faqs" && hide != true] | order(order, asc) {\n    _id,\n    question,\n    answer,\n    hide\n    }': FaqsQueryResult;
   }
 }
