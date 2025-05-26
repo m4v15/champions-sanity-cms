@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Hero = () => (
-  <div className="mx-auto max-w-7xl px-6 py-6 grid gap-6 lg:grid-cols-2 lg:h-[80vh] lg:py-10 lg:gap-3">
+  <div className="grid gap-6 lg:grid-cols-2 lg:h-[80vh] lg:py-10 lg:gap-3  ">
     <h1 className="font-header text-pretty text-3xl text-center font-semibold tracking-tight text-gray-900 lg:text-5xl lg:text-left">
       A global community of allies directly supporting families in Gaza
     </h1>

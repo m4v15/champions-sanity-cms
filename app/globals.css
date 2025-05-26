@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap')
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap")
 layer(base);
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --animate-scroll: scroll 30s linear infinite;
 
-  --background-image-hero: url('/mapround.png');
-  --background-image-red-logo: url('/logo/3x/logo-red@3x.png');
-  --background-image-black-logo: url('/logo/3x/transparent-logo-white@3x.png');
+  --background-image-hero: url("/mapround.png");
+  --background-image-red-logo: url("/logo/3x/logo-red@3x.png");
+  --background-image-black-logo: url("/logo/3x/transparent-logo-white@3x.png");
 
   --color-background: #f7f7f3;
   --color-dark: #39372e;
