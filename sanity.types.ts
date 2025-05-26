@@ -131,6 +131,35 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
+export type Faqs = {
+  _id: string;
+  _type: "faqs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  question?: string;
+  answer?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  hide?: boolean;
+  order?: number;
+};
+
 export type Funds = {
   _id: string;
   _type: "funds";
@@ -197,6 +226,7 @@ export type AllSanitySchemaTypes =
   | Geopoint
   | Slug
   | SanityAssetSourceData
+  | Faqs
   | Funds
   | Links
   | SiteContent;
@@ -246,6 +276,31 @@ export type FundsQueryResult = Array<{
   target: number | null;
   currency: string | null;
 }>;
+// Variable: faqsQuery
+// Query: *[_type == "faqs" && hide != true] | order(order, asc) {    _id,    question,    answer,    hide    }
+export type FaqsQueryResult = Array<{
+  _id: string;
+  question: string | null;
+  answer: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  hide: boolean | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -254,5 +309,6 @@ declare module "@sanity/client" {
     '*[_type == "siteContent" && contentName == "Main Page"]{\n    _id,\n    aboutText,\n    landingTitle,\n    landingSubtitle\n    }': ContentQueryResult;
     '*[_type == "links"]{\n    _id,\n    text,\n    url,\n    type\n    }': LinksQueryResult;
     '*[_type == "funds"]{\n    _id,\n    title,\n    url,\n    imageUrl,\n    raised,\n    target,\n    currency\n    }': FundsQueryResult;
+    '*[_type == "faqs" && hide != true] | order(order, asc) {\n    _id,\n    question,\n    answer,\n    hide\n    }': FaqsQueryResult;
   }
 }

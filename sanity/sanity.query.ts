@@ -31,6 +31,15 @@ export const fundsQuery = defineQuery(
     }`,
 );
 
+export const faqsQuery = defineQuery(
+  `*[_type == "faqs" && hide != true] | order(order, asc) {
+    _id,
+    question,
+    answer,
+    hide
+    }`,
+);
+
 export const getContent = async () =>
   await client.fetch(contentQuery, undefined, { cache: "no-store" });
 
@@ -39,3 +48,6 @@ export const getLinks = async () =>
 
 export const getFunds = async () =>
   await client.fetch(fundsQuery, undefined, { cache: "no-store" });
+
+export const getFaqs = async () =>
+  await client.fetch(faqsQuery, undefined, { cache: "no-store" });

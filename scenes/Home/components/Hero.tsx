@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Hero = () => (
-  <div className="mx-auto max-w-7xl px-6 py-6 grid gap-6 lg:grid-cols-2 lg:h-[80vh] lg:py-10 lg:gap-3">
+  <div className="grid gap-6 h-100 lg:grid-cols-2 lg:h-[80vh] lg:py-10 lg:gap-3  ">
     <h1 className="font-header text-pretty text-3xl text-center font-semibold tracking-tight text-gray-900 lg:text-5xl lg:text-left">
       A global community of allies directly supporting families in Gaza
     </h1>
@@ -13,7 +13,7 @@ const Hero = () => (
         rel="noopener noreferrer"
         target="_blank"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
-        className="rounded-md bg-theme-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-theme-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-red-600"
+        className="rounded-md bg-theme-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-theme-red-800 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-theme-red-600"
       >
         Join us
       </Link>
