@@ -10,7 +10,6 @@ import Happy from '@/public/happyhour.jpeg'
 import Happy2 from '@/public/happyhour2.jpeg'
 import g4 from '@/public/g4.jpeg'
 import dinner from '@/public/dinner.jpeg'
-import Faqs from "@/components/Faqs";
 
 const portableTextComponents: PortableTextComponents = {
   marks: {
@@ -26,7 +25,6 @@ const About = async () => {
 
   return (
     <>
-      <Faqs />
       <div className="mt-16 sm:mt-32 mx-auto max-w-2xl lg:max-w-5xl">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-auto lg:gap-y-12">
           <div className="lg:pl-20">
