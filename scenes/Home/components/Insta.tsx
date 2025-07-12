@@ -13,8 +13,6 @@ const Insta = ({urls}: PropsType) => {
     setIsClient(true);
   }, []);
 
-  console.log("Insta component rendered with URLs:", urls);
-
   return (
     isClient && urls && urls.length > 0 && (
               <div className=" ">
