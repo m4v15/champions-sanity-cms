@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {useMediaQuery} from '@react-hook/media-query'
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 type INavbarProps = {
@@ -14,7 +14,11 @@ type INavbarProps = {
   }>;
 };
 
-const Logo = ({height = 50}) => {
+type LogoProps = {
+  height?: number;
+}
+
+const Logo = ({height = 50}: LogoProps) => {
   return (
     <span
       className={"inline-flex items-center hover:scale-105 mb-3 md:mb-0"}
@@ -40,7 +44,12 @@ type linkPropsType = {
   target?: string;
 }
 
-const MenuIcon = ({ showNav, toggleNav }) => (
+type MenuIconProps = {
+  showNav: boolean;
+  toggleNav: () => void;
+}
+
+const MenuIcon = ({ showNav, toggleNav }: MenuIconProps) => (
   <button
     className="z-99 fixed right-10 top-0 p-2 md:hidden text-gray-900 focus:outline-none"
     onClick={toggleNav}
