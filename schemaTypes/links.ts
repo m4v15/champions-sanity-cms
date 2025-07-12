@@ -30,6 +30,7 @@ const links = {
         list: [
           { title: "Project", value: "project" },
           { title: "Media", value: "media" },
+          { title: "Insta", value: "insta" },
         ],
       },
       validation: (rule) => rule.required().length(1),
