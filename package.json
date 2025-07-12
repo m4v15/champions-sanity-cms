@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@react-hook/media-query": "^1.1.1",
     "@sanity/vision": "^3.68.3",
     "@tailwindcss/postcss": "^4.1.7",
     "next": "15.1.3",

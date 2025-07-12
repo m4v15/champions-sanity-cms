@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import {useMediaQuery} from '@react-hook/media-query'
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 type INavbarProps = {
@@ -12,9 +14,7 @@ type INavbarProps = {
   }>;
 };
 
-const Logo = () => {
-  const height = 50
-
+const Logo = ({height = 50}) => {
   return (
     <span
       className={"inline-flex items-center hover:scale-105 mb-3 md:mb-0"}
@@ -40,10 +40,42 @@ type linkPropsType = {
   target?: string;
 }
 
+const MenuIcon = ({ showNav, toggleNav }) => (
+  <button
+    className="z-99 fixed right-10 top-0 p-2 md:hidden text-gray-900 focus:outline-none"
+    onClick={toggleNav}
+    aria-label="Toggle navigation" 
+  >
+    {showNav ? (
+        <svg
+        className={`h-6 w-6`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      ): (
+        <Image
+        src={"logo/SVG/transparent-logo-red.svg"}
+        alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
+        width={30}
+        height={30}
+        />)}
+  </button>
+);
+
 const NavBar = (props: INavbarProps) => {
+  const isMobile = useMediaQuery('(max-width: 480px)')
+  const [showNav, setShowNav] = useState(true);
+  const toggleNav = () => setShowNav(!showNav);
   const pathName = usePathname();
 
-  return (
+
+  return (<>
+    {isMobile && <MenuIcon showNav={showNav} toggleNav={toggleNav} />}
+    {showNav && (
     <div className="border-theme-red-800 mx-auto w-full border-b bg-background px-3 py-6 sticky top-0 font-header md:px-12 z-50">
       <div className="m-auto flex flex-row flex-wrap items-center justify-between">
         <Link href="/">
@@ -95,7 +127,8 @@ const NavBar = (props: INavbarProps) => {
         </nav>
       </div>
     </div >
-  );
+  )}
+  </>)
 };
 
 export default NavBar;

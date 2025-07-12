@@ -2869,6 +2869,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-hook/media-query@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@react-hook/media-query@npm:1.1.1"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 10c0/49f98ca8ea709678a62c4281a7e4f71365376e04626eab8e09fd74956104892c088079868f35501933fca7a44d31ed80c29f1a7baa537cfb69c1b798e78ada55
+  languageName: node
+  linkType: hard
+
 "@react-stately/flags@npm:^3.1.2":
   version: 3.1.2
   resolution: "@react-stately/flags@npm:3.1.2"
@@ -11520,6 +11529,7 @@ __metadata:
     "@headlessui/react": "npm:^2.2.4"
     "@heroicons/react": "npm:^2.2.0"
     "@portabletext/react": "npm:^3.2.0"
+    "@react-hook/media-query": "npm:^1.1.1"
     "@sanity/vision": "npm:^3.68.3"
     "@tailwindcss/postcss": "npm:^4.1.7"
     "@types/node": "npm:^20"
