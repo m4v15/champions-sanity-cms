@@ -9,7 +9,7 @@ const Home = async () => {
   
   return (
     <>
-      <div className="relative isolate overflow-hidden bg-white grid grid-rows-[90vh_auto_auto] gap-10  pt-8 lg:pt-0 pb-14 lg:pb-[14rem] px-2 lg:px-14">
+      <div className="relative isolate overflow-hidden bg-white flex flex-col gap-10  pt-8 lg:pt-0 pb-14 lg:pb-[14rem] px-2 lg:px-14">
         <Hero />
         <Insta urls={urls} />
         <Faqs />
