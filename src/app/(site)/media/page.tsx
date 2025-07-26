@@ -4,7 +4,7 @@ import { getLinks } from "@/sanity/sanity.query";
 
 import { Button, Section, ExternalLink } from "@/components";
 
-export default async function Links() {
+export default async function MediaPage() {
   const links = await getLinks()
 
 
