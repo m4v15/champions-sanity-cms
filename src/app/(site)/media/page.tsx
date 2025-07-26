@@ -1,62 +1,7 @@
+import { Media } from "@/scenes";
 
-import Link from "next/link";
-import { getLinks } from "@/sanity/sanity.query";
-
-import { Button, Section, ExternalLink } from "@/components";
-
-export default async function MediaPage() {
-  const links = await getLinks()
-
-
-  const projects = links?.filter((link) => link?.type?.includes("project"));
-  const media = links?.filter((link) => link?.type?.includes("media"));
-
+export default function MediaPage() {
   return (
-    <div className="antialiased">
-      <Section>
-        <div className="mt-5 flex flex-col items-center">
-          <div className="w-full text-left flex flex-col">
-            <div className="text-2xl font-bold">
-              Other Projects we are part of
-            </div>
-            {projects &&
-              projects.map(({ _id, url, text }) => {
-                return url && text &&
-                  (
-                    <ExternalLink
-                      key={_id}
-                      url={url}
-                      text={text}
-                    />
-                  );
-              })}
-            <br />
-            <div className="text-2xl font-bold">
-              Gaza Fundraising Coverage in the Media
-            </div>
-            {media &&
-              media.map(({ _id, url, text }) => {
-                return url && text &&
-                  (
-                    <ExternalLink
-                      key={_id}
-                      url={url}
-                      text={text}
-                    />
-                  );
-              })}
-          </div>
-          <br />
-          <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="pt-10"
-          >
-            <Button text="Become A Champion" />
-          </Link>
-        </div>
-      </Section>
-    </div>
+      <Media />
   );
 }
