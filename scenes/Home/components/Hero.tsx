@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppConfig } from "@/utils/AppConfig";
 
 const Hero = () => (
   <div className="grid gap-6 lg:grid-cols-2 lg:py-10 lg:gap-3  ">
@@ -12,7 +13,7 @@ const Hero = () => (
       <Link
         rel="noopener noreferrer"
         target="_blank"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
+        href={AppConfig.sign_up_link}
         className="rounded-md bg-theme-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-theme-red-800 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-theme-red-600"
       >
         Join us

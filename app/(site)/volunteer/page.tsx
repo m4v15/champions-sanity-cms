@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Button } from "@/components";
 import { ReactNode } from "react";
+import { AppConfig } from "@/utils/AppConfig";
 
 type VolunteerSectionProps = {
   title: string;
@@ -59,7 +60,7 @@ export default function Volunteer() {
                 </p>
               </>
             }
-            link="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
+            link={AppConfig.sign_up_link}
             linkText="Become A Champion"
             order={1}
           />

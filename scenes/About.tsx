@@ -4,6 +4,7 @@ import { getContent } from "@/sanity/sanity.query";
 import Image from 'next/image'
 
 import Link from "next/link";
+import { AppConfig } from "@/utils/AppConfig";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
 import Happy from '@/public/happyhour.jpeg'
@@ -77,7 +78,7 @@ const About = async () => {
               )}
             </div>
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
+              href={AppConfig.sign_up_link}
               rel="noopener noreferrer"
               target="_blank"
               className="pt-10"
