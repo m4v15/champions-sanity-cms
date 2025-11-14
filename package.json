@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "eslint": "eslint './*'"
+    "eslint": "eslint './*'",
+    "clean": "rm -rf .next"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@portabletext/types": "^3.0.0",
     "@react-hook/media-query": "^1.1.1",
     "@sanity/color-input": "^4.0.6",
     "@sanity/vision": "^3.68.3",

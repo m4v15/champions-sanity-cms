@@ -2856,6 +2856,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@portabletext/types@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@portabletext/types@npm:3.0.0"
+  checksum: 10c0/efc2a219d639c7d97a4943fca8bc5e259aea13377b4ecb96f4c150c3f3bd1361034b37b1b89f5001a39963104614aa68eb43e0a18514d0ad5a229f7db7f73e5a
+  languageName: node
+  linkType: hard
+
 "@react-aria/focus@npm:^3.20.2":
   version: 3.20.5
   resolution: "@react-aria/focus@npm:3.20.5"
@@ -11925,6 +11932,7 @@ __metadata:
     "@headlessui/react": "npm:^2.2.4"
     "@heroicons/react": "npm:^2.2.0"
     "@portabletext/react": "npm:^3.2.0"
+    "@portabletext/types": "npm:^3.0.0"
     "@react-hook/media-query": "npm:^1.1.1"
     "@sanity/color-input": "npm:^4.0.6"
     "@sanity/vision": "npm:^3.68.3"

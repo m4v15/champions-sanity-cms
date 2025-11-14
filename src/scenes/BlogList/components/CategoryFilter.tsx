@@ -1,13 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-
-interface Category {
-  _id: string;
-  name: string | null;
-  slug: { current: string | null } | null;
-  color: { hex: string | null } | null;
-}
+import { Category } from "@/types/blog";
 
 interface CategoryFilterProps {
   categories: Category[];

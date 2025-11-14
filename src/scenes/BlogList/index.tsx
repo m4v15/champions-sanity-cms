@@ -1,29 +1,6 @@
 import { getBlogPosts, getCategories } from "@sanity/sanity.query";
 import { BlogPostCard, CategoryFilter, Pagination } from "./components";
-
-interface Category {
-  _id: string;
-  name: string | null;
-  slug: { current: string | null } | null;
-  color: { hex: string | null } | null;
-}
-
-interface BlogPost {
-  _id: string;
-  title: string | null;
-  slug: { current: string | null } | null;
-  excerpt: string | null;
-  featuredImage?: {
-    asset?: {
-      _id: string;
-      url: string;
-    } | null;
-    alt: string | null;
-  } | null;
-  categories?: Category[] | null;
-  publishDate: string | null;
-  featured: boolean | null;
-}
+import { BlogPostSummary, Category } from "@/types/blog";
 
 interface BlogListProps {
   searchParams: {
@@ -38,7 +15,7 @@ export default async function BlogList({ searchParams }: BlogListProps) {
   const [allPosts, categories] = await Promise.all([
     getBlogPosts(),
     getCategories(),
-  ]) as [BlogPost[], Category[]];
+  ]) as [BlogPostSummary[], Category[]];
 
   // Filter by category if specified
   const categorySlug = searchParams.category;

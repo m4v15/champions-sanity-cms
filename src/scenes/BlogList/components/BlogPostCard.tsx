@@ -1,32 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-
-interface Category {
-  _id: string;
-  name: string | null;
-  slug: { current: string | null } | null;
-  color: { hex: string | null } | null;
-}
-
-interface BlogPost {
-  _id: string;
-  title: string | null;
-  slug: { current: string | null } | null;
-  excerpt: string | null;
-  featuredImage?: {
-    asset?: {
-      _id: string;
-      url: string;
-    } | null;
-    alt: string | null;
-  } | null;
-  categories?: Category[] | null;
-  publishDate: string | null;
-  featured: boolean | null;
-}
+import { BlogPostSummary } from "@/types/blog";
 
 interface BlogPostCardProps {
-  post: BlogPost;
+  post: BlogPostSummary;
 }
 
 export default function BlogPostCard({ post }: BlogPostCardProps) {
@@ -74,7 +51,6 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
         </div>
 
         <h2 className="mb-2 text-2xl font-bold tracking-tight group-hover:text-theme-green-900">
-          {post.featured && <span className="mr-2">⭐</span>}
           {post.title}
         </h2>
 
