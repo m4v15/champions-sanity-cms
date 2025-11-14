@@ -1,5 +1,5 @@
 import { Button } from "@/components";
-import { getContent } from "@/sanity/sanity.query";
+import { getContent } from "@sanity/sanity.query";
 
 import Image from 'next/image'
 
@@ -7,10 +7,10 @@ import Link from "next/link";
 import { AppConfig } from "@/utils/AppConfig";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-import Happy from '@/public/happyhour.jpeg'
-import Happy2 from '@/public/happyhour2.jpeg'
-import g4 from '@/public/g4.jpeg'
-import dinner from '@/public/dinner.jpeg'
+import Happy from '@root/public/happyhour.jpeg'
+import Happy2 from '@root/public/happyhour2.jpeg'
+import g4 from '@root/public/g4.jpeg'
+import dinner from '@root/public/dinner.jpeg'
 
 const portableTextComponents: PortableTextComponents = {
   marks: {
@@ -25,7 +25,7 @@ const About = async () => {
   const [content] = await getContent()
 
   return (
-    <>
+    <div className="mx-auto max-w-screen-lg">
       <div className="mt-16 sm:mt-32 mx-auto max-w-2xl lg:max-w-5xl">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-auto lg:gap-y-12">
           <div className="lg:pl-20">
@@ -88,7 +88,7 @@ const About = async () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

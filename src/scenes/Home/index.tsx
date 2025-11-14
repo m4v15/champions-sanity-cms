@@ -1,11 +1,11 @@
 import { Faqs, Hero, Insta, Substack } from "./components";
-import { getLinks } from "@/sanity/sanity.query";
+import { getLinks } from "@sanity/sanity.query";
 
 
 const Home = async () => {
   const links = await getLinks();
   const insta = links?.filter((link) => link?.type?.includes("insta"));
-  const urls = insta.map((link) => link.url).slice(0, 3);
+  const urls = insta.map((link) => link.url).filter((url): url is string => url !== null).slice(0, 3);
   
   return (
     <>

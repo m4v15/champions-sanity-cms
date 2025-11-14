@@ -1,8 +1,8 @@
 import { Card } from "@/components";
-import { getFunds } from "@/sanity/sanity.query";
+import { getFunds } from "@sanity/sanity.query";
 
 
-export default async function Fundraisers() {
+export default async function FundsPage() {
 
   const funds = await getFunds()
 
