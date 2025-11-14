@@ -40,6 +40,40 @@ export const faqsQuery = defineQuery(
     }`,
 );
 
+export const blogPostsQuery = defineQuery(
+  `*[_type == "blogPost" && published == true] | order(publishDate desc) {
+    _id,
+    title,
+    slug,
+    excerpt,
+    featuredImage {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    categories[]->{
+      _id,
+      name,
+      slug,
+      color
+    },
+    publishDate,
+    featured
+  }`,
+);
+
+export const categoriesQuery = defineQuery(
+  `*[_type == "category"] | order(name asc) {
+    _id,
+    name,
+    slug,
+    description,
+    color
+  }`,
+);
+
 export const getContent = async () =>
   await client.fetch(contentQuery, undefined, { cache: "no-store" });
 
@@ -51,3 +85,9 @@ export const getFunds = async () =>
 
 export const getFaqs = async () =>
   await client.fetch(faqsQuery, undefined, { cache: "no-store" });
+
+export const getBlogPosts = async () =>
+  await client.fetch(blogPostsQuery, undefined, { cache: "no-store" });
+
+export const getCategories = async () =>
+  await client.fetch(categoriesQuery, undefined, { cache: "no-store" });
