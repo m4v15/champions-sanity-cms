@@ -1,5 +1,5 @@
 import { Button } from "@/components";
-import { getContent } from "@/sanity/sanity.query";
+import { getContent } from "@sanity/sanity.query";
 
 import Image from 'next/image'
 

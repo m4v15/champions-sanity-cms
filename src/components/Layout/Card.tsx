@@ -1,4 +1,4 @@
-import { FundsQueryResult } from '@/sanity/sanity.types';
+import { FundsQueryResult } from '@sanity/sanity.types';
 import Link from 'next/link';
 
 type Unpacked<T> = T extends (infer U)[] ? U : T;

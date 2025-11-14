@@ -1,8 +1,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
-import { getFaqs } from "@/sanity/sanity.query";
-import { FaqsQueryResult } from '@/sanity/sanity.types';
+import { getFaqs } from "@sanity/sanity.query";
+import { FaqsQueryResult } from '@sanity/sanity.types';
 import { PortableText } from "@portabletext/react";
 
 const Faqs = async () => {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getLinks } from "@/sanity/sanity.query";
+import { getLinks } from "@sanity/sanity.query";
 import { AppConfig } from "@/utils/AppConfig";
 import { Button, Section } from "@/components";
 
