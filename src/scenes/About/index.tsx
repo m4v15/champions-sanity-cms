@@ -7,10 +7,10 @@ import Link from "next/link";
 import { AppConfig } from "@/utils/AppConfig";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-import Happy from '@/public/happyhour.jpeg'
-import Happy2 from '@/public/happyhour2.jpeg'
-import g4 from '@/public/g4.jpeg'
-import dinner from '@/public/dinner.jpeg'
+import Happy from '@root/public/happyhour.jpeg'
+import Happy2 from '@root/public/happyhour2.jpeg'
+import g4 from '@root/public/g4.jpeg'
+import dinner from '@root/public/dinner.jpeg'
 
 const portableTextComponents: PortableTextComponents = {
   marks: {
