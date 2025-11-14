@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components";
 import { Faqs } from "@/scenes/Home/components";
+import { AppConfig } from "@/utils/AppConfig";
 
 export default function FaqsPage() {
   return (
@@ -8,7 +9,7 @@ export default function FaqsPage() {
       <Faqs />
       <div className="mx-auto">
         <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
+          href={AppConfig.sign_up_link}
           rel="noopener noreferrer"
           target="_blank"
         >

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { getLinks } from "@/sanity/sanity.query";
-
+import { AppConfig } from "@/utils/AppConfig";
 import { Button, Section } from "@/components";
 
 import { ExternalLink } from "./components"
@@ -50,7 +50,7 @@ export default async function MediaPage() {
           </div>
           <br />
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdQBwxbU97VXa9Phi4ACSrQMfIJNp6ZFPfQvhAjJ2J1ekoMJg/viewform"
+            href={AppConfig.sign_up_link}
             rel="noopener noreferrer"
             target="_blank"
             className="pt-10"
