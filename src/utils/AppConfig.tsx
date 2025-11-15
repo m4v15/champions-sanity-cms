@@ -8,6 +8,7 @@ export const AppConfig = {
 };
 
 export const NavLinks = [
+  { route: "/blog", display: "news" },
   { route: "/faq", display: "faq" },
   { route: "https://gazachampions.substack.com/", display: "newsletter", external: true },
   { route: "/volunteer", display: "volunteer" },
