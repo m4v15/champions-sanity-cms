@@ -6,6 +6,7 @@ import faqs from "./faqs";
 import featuredBlogPosts from "./featuredPosts";
 import funds from "./funds";
 import links from "./links";
+import navbarLinks from "./navbarLinks";
 import relatedPosts from "./relatedPosts";
 
 const queries = {
@@ -17,6 +18,7 @@ const queries = {
     featuredBlogPosts,
     funds,
     links,
+    navbarLinks,
     relatedPosts,
 }
 

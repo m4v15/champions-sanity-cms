@@ -31,3 +31,6 @@ export const getRelatedPosts = async (postId: string, categoryIds: string[]) =>
 
   export const getFeaturedBlogPosts = async () =>
   await client.fetch(queries.featuredBlogPosts, undefined, { cache: "no-store" });
+
+export const getNavbarLinks = async () =>
+  await client.fetch(queries.navbarLinks, undefined, { cache: "no-store" });
