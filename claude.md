@@ -4,7 +4,7 @@
 **Gaza Champions** is a Next.js 15 application with Sanity CMS integration for managing a website that supports fundraising efforts for Gaza. The site features a blog, FAQs, funds information, media links, and volunteer sign-up functionality.
 
 ## Tech Stack
-- **Frontend**: Next.js 15.1.3 (App Router), React 19, TypeScript 5
+- **Frontend**: Next.js 15.5.12 (App Router), React 19, TypeScript 5
 - **Styling**: Tailwind CSS 4.1.7, styled-components 6.1.18
 - **CMS**: Sanity 3.68.3 with Sanity Vision plugin
 - **UI Components**: Headless UI 2.2.4, Heroicons 2.2.0
