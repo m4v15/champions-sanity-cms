@@ -19,7 +19,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link
       href={`/blog/${post.slug?.current}`}
-      className="group flex flex-col overflow-hidden border border-gray-200 bg-white shadow transition-transform hover:scale-105"
+      className="rounded-sm group flex flex-col overflow-hidden border border-gray-200 bg-white shadow transition-transform hover:scale-105"
     >
       {post.featuredImage?.asset?.url && (
         <div className="relative h-48 w-full overflow-hidden bg-gray-200">
