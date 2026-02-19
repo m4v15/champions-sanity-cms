@@ -21,10 +21,10 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
   }
 
   return (
-    <section className="mx-auto w-full max-w-7xl">
+    <section className="w-full max-w-7xl">
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <p className="mt-2 text-lg text-gray-600">
+          <p className="mt-2 text-lg text-gray-600 font-medium text-gray-500">
             Check out the latest stories and insights from our champions
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
           <Link
             key={post._id}
             href={`/blog/${post.slug?.current}`}
-            className="group flex flex-col overflow-hidden border border-gray-200 bg-white shadow transition-transform hover:scale-105"
+            className="rounded-sm group flex flex-col overflow-hidden border border-gray-200 bg-white shadow transition-transform hover:scale-105"
           >
             {post.featuredImage?.asset?.url && (
               <div className="relative h-48 w-full overflow-hidden bg-gray-200">
