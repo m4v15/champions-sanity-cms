@@ -24,7 +24,7 @@ const Logo = ({height = 50}: LogoProps) => {
       className={"inline-flex items-center hover:scale-105 mb-3 md:mb-0"}
     >
       <Image
-        src={"logo/SVG/transparent-logo-red.svg"}
+        src={"/logo/SVG/transparent-logo-red.svg"}
         alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
         width={height}
         height={height}
@@ -67,7 +67,7 @@ const MenuIcon = ({ showNav, toggleNav }: MenuIconProps) => (
       </svg>
       ): (
         <Image
-        src={"logo/SVG/transparent-logo-red.svg"}
+        src={"/logo/SVG/transparent-logo-red.svg"}
         alt="The logo for Gaza Champions: Four hands holding each others wrists in a square"
         width={30}
         height={30}
