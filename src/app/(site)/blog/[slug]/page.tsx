@@ -16,7 +16,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const title = post.title ?? "Gaza Champions";
   const description = post.excerpt ?? "Initiative to find individuals to champion fundraising efforts from Gaza";
-  const imageUrl = post.featuredImage?.asset?.url;
+  const sanityImageUrl = post.featuredImage?.asset?.url;
+  // Append dimensions so scrapers (WhatsApp, Signal) accept the image.
+  // Fall back to the site logo if the post has no featured image.
+  const ogImage = sanityImageUrl
+    ? `${sanityImageUrl}?w=1200&h=630&fit=crop`
+    : "/logo/3x/logo-red@3x.png";
 
   return {
     title,
@@ -24,13 +29,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title,
       description,
-      images: imageUrl ? [{ url: imageUrl }] : [],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: imageUrl ? [imageUrl] : [],
+      images: [ogImage],
     },
   };
 }
