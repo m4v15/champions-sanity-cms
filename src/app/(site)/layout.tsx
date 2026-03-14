@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: "Gaza Champions",
   description:
     "Initiative to find individuals to champion fundraising efforts from Gaza",
+  openGraph: {
+    title: "Gaza Champions",
+    description:
+      "Initiative to find individuals to champion fundraising efforts from Gaza",
+    siteName: "Gaza Champions",
+    images: [{ url: "/logo/3x/logo-red@3x.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gaza Champions",
+    description:
+      "Initiative to find individuals to champion fundraising efforts from Gaza",
+    images: ["/logo/3x/logo-red@3x.png"],
+  },
 };
 
 export default async function RootLayout({
